@@ -16,12 +16,8 @@ if "$ZSH/tools/require_tool.sh" emacsclient 24 2>/dev/null ; then
     # set EDITOR if not already defined.
     export EDITOR="${EDITOR:-${EMACS_PLUGIN_LAUNCHER}}"
 
-    if [ -z "pgrep emacs" ]; then
-	alias emacs="$EMACS_PLUGIN_LAUNCHER --no-wait"
-    else
-	alias emacs="$EMACS_PLUGIN_LAUNCHER"
-    fi
-    alias e=emacs
+    alias emacs="$EMACS_PLUGIN_LAUNCHER"
+    alias e="emacs -n"
     # open terminal emacsclient
     alias te="$EMACS_PLUGIN_LAUNCHER -nw"
 
